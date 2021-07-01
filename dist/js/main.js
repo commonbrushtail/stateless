@@ -1,7 +1,15 @@
+let fullPageWrap = document.querySelector("#fullpage");
+console.log(fullPageWrap);
+
 new fullpage("#fullpage", {
   //options here
   autoScrolling: true,
-  scrollHorizontally: true,
+
+  afterLoad: function (origin, destination, direction) {
+    if (destination.index == 2) {
+      fullpage_api.setAllowScrolling(false);
+    }
+  },
 });
 
 gsap.registerPlugin(ScrambleTextPlugin, ScrollTrigger, Flip);
@@ -206,4 +214,16 @@ ScrollTrigger.matchMedia({
     );
     s1TL.play();
   },
+});
+
+const swiper = new Swiper(".swiper-container", {
+  // Optional parameters
+  direction: "vertical",
+  loop: true,
+  centeredSlides: true,
+  slidesPerView: 1,
+
+  // If we need pagination
+
+  // Navigation arrows
 });

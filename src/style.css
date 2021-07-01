@@ -40,6 +40,9 @@
   .w5 {
     width: 5px;
   }
+  .h-50vh {
+    height: 50vh;
+  }
 }
 
 .section1 {
