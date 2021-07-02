@@ -219,11 +219,32 @@ ScrollTrigger.matchMedia({
 const swiper = new Swiper(".swiper-container", {
   // Optional parameters
   direction: "vertical",
-  loop: true,
-  centeredSlides: true,
-  slidesPerView: 1,
+  mousewheel: true,
+  speed: 1000,
+  parallax: true,
 
   // If we need pagination
 
   // Navigation arrows
 });
+
+const swiper2 = new Swiper(".swiper-container2", {
+  // Optional parameters
+  pagination: {
+    el: ".swiper-pagination",
+    speed: 5000,
+  },
+
+  // Navigation arrows
+
+  direction: "vertical",
+  mousewheel: true,
+
+  // If we need pagination
+
+  // Navigation arrows
+});
+
+setTimeout(() => {
+  swiper2.slideTo(2, 2000);
+}, 4000);

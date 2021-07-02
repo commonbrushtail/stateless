@@ -18137,6 +18137,11 @@ video {
         }
     }
 
+.swiper-container2 {
+  background-image: url("../dist/assets/1800x1200_dog_cool_summer_other.webp");
+  background-size: cover;
+}
+
 @media (min-width: 375px){
   .xs\:container{
     width: 100%;
