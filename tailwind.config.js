@@ -4,6 +4,19 @@ module.exports = {
   },
   darkMode: false, // or 'media' or 'class'
   theme: {
+    extend: {
+      fontFamily: {
+        sanBold: ["sanBold"],
+        sanReg: ["sanReg"],
+      },
+      colors: {
+        yellow: "#fdb913",
+        green: "#009444",
+        "dark-green": "#002a28",
+        white: "#fffbf3",
+        black: "#002a28",
+      },
+    },
     screens: {
       xs: "375px",
       // => @media (min-width: 375px) { ... }
@@ -22,17 +35,6 @@ module.exports = {
 
       "2xl": "1536px",
       // => @media (min-width: 1536px) { ... }
-    },
-    colors: {
-      yellow: "#fdb913",
-      green: "#009444",
-      "dark-green": "#002a28",
-      white: "#fffbf3",
-      black: "#002a28",
-    },
-    fontFamily: {
-      robato: ["Roboto"],
-      prompt: ["Prompt"],
     },
   },
   variants: {
