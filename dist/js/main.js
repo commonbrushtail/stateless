@@ -1,17 +1,4 @@
-let fullPageWrap = document.querySelector("#fullpage");
-
-new fullpage("#fullpage", {
-  //options here
-  autoScrolling: true,
-
-  afterLoad: function (origin, destination, direction) {
-    if (destination.index == 2) {
-      fullpage_api.setAllowScrolling(false);
-    }
-  },
-});
-
-gsap.registerPlugin(ScrambleTextPlugin, ScrollTrigger, Flip);
+gsap.registerPlugin(ScrambleTextPlugin, ScrollTrigger, Flip, ScrollToPlugin);
 
 ScrollTrigger.matchMedia({
   // large
@@ -215,157 +202,106 @@ ScrollTrigger.matchMedia({
   */
 });
 
-const swiper = new Swiper(".swiper-container", {
-  // Optional parameters
-  direction: "vertical",
-  simulateTouch: true,
-  mousewheel: {
-    thresholdDelta: 100,
-  },
+new fullpage("#fullpage", {
+  //options here
+  autoScrolling: true,
+  onLeave: function (origin, destination, direction) {
+    if (
+      origin.item.classList.contains("beforeQuote") &&
+      destination.item.classList.contains("fpQuoteSlide1")
+    ) {
+      gsap.fromTo(
+        ".quote-slide",
+        {
+          opacity: 1,
+          y: "100vh",
+        },
+        {
+          opacity: 1,
+          y: 0,
+        }
+      );
+    }
+    if (
+      destination.item.classList.contains("beforeQuote") &&
+      origin.item.classList.contains("fpQuoteSlide1")
+    ) {
+      gsap.fromTo(
+        ".quote-slide",
+        {
+          opacity: 1,
+          y: 0,
+        },
+        {
+          opacity: 1,
+          y: "100vh",
+        }
+      );
+    }
 
-  speed: 1000,
+    if (
+      destination.item.classList.contains("afterQuote") &&
+      origin.item.classList.contains("fpQuoteSlide5")
+    ) {
+      gsap.fromTo(
+        ".quote-slide",
+        {
+          opacity: 1,
+          y: 0,
+        },
+        {
+          opacity: 0,
+          y: "-100vh",
+        }
+      );
+    }
+
+    if (
+      destination.item.classList.contains("fpQuoteSlide5") &&
+      origin.item.classList.contains("afterQuote")
+    ) {
+      gsap.fromTo(
+        ".quote-slide",
+        {
+          opacity: 1,
+          y: "-100vh",
+        },
+        {
+          opacity: 1,
+          y: 0,
+        }
+      );
+    }
+
+    if (destination.item.classList.contains("fpQuoteSlide1")) {
+      swiper.slideTo(0);
+      swiper2.slideTo(0);
+    }
+    if (destination.item.classList.contains("fpQuoteSlide2")) {
+      swiper.slideTo(1);
+      swiper2.slideTo(0);
+    }
+    if (destination.item.classList.contains("fpQuoteSlide3")) {
+      swiper.slideTo(2);
+      swiper2.slideTo(1);
+    }
+    if (destination.item.classList.contains("fpQuoteSlide4")) {
+      swiper.slideTo(3);
+      swiper2.slideTo(1);
+    }
+    if (destination.item.classList.contains("fpQuoteSlide5")) {
+      swiper.slideTo(4);
+      swiper2.slideTo(2);
+    }
+  },
+});
+
+const swiper = new Swiper(".swiper-container", {
+  allowTouchMove: false,
   parallax: true,
   resistanceRatio: 0,
-
-  preventInteractionOnTransition: true,
-});
-
-swiper.on("slideChange", (swiper, event) => {
-  if (swiper.activeIndex == 2) {
-    swiper.allowSlideNext = false;
-    swiper.allowSlidePrev = false;
-    swiper.mousewheel.disable();
-  }
-});
-
-var isScrolling;
-
-window.addEventListener(
-  "wheel",
-  function (event) {
-    window.clearTimeout(isScrolling);
-
-    isScrolling = setTimeout(function () {
-      if (swiper.activeIndex != 2) {
-        return console.log("note target");
-      }
-      if (Math.sign(event.deltaY) == 1) {
-        if (swiper2.activeIndex == 0 && swiper3.activeIndex == 0) {
-          swiper2.slideNext();
-          return;
-        }
-        if (swiper2.activeIndex == 1 && swiper3.activeIndex == 0) {
-          swiper2.slideNext();
-          swiper3.slideNext();
-          return;
-        }
-        if (swiper2.activeIndex == 2 && swiper3.activeIndex == 1) {
-          swiper2.slideNext();
-
-          return;
-        }
-        if (swiper2.activeIndex == 3 && swiper3.activeIndex == 1) {
-          swiper2.slideNext();
-          swiper3.slideNext();
-
-          return;
-        }
-      }
-
-      if (Math.sign(event.deltaY) == -1) {
-        console.log("run");
-        if (swiper2.activeIndex == 4 && swiper3.activeIndex == 2) {
-          swiper2.slidePrev();
-          swiper3.slidePrev();
-          return;
-        }
-        if (swiper2.activeIndex == 3 && swiper3.activeIndex == 1) {
-          swiper2.slidePrev();
-
-          return;
-        }
-        if (swiper2.activeIndex == 2 && swiper3.activeIndex == 1) {
-          swiper2.slidePrev();
-          swiper3.slidePrev();
-
-          return;
-        }
-        if (swiper2.activeIndex == 1 && swiper3.activeIndex == 0) {
-          swiper2.slidePrev();
-
-          return;
-        }
-        if (swiper2.activeIndex == 0 && swiper3.activeIndex == 0) {
-          swiper.allowSlideNext = true;
-          swiper.allowSlidePrev = true;
-          swiper.slidePrev();
-          console.log("fire");
-          return;
-        }
-      }
-    }, 66);
-  },
-  false
-);
-
-swiper.on("touchEnd", (swiper, event) => {
-  if (swiper.activeIndex != 2) {
-    return console.log("not target");
-  }
-
-  if (swiper.swipeDirection == "next") {
-    if (swiper2.activeIndex == 0 && swiper3.activeIndex == 0) {
-      swiper2.slideNext();
-      return;
-    }
-    if (swiper2.activeIndex == 1 && swiper3.activeIndex == 0) {
-      swiper2.slideNext();
-      swiper3.slideNext();
-      return;
-    }
-    if (swiper2.activeIndex == 2 && swiper3.activeIndex == 1) {
-      swiper2.slideNext();
-
-      return;
-    }
-    if (swiper2.activeIndex == 3 && swiper3.activeIndex == 1) {
-      swiper2.slideNext();
-      swiper3.slideNext();
-
-      return;
-    }
-  }
-
-  if (swiper.swipeDirection == "prev") {
-    if (swiper2.activeIndex == 4 && swiper3.activeIndex == 2) {
-      swiper2.slidePrev();
-      swiper3.slidePrev();
-      return;
-    }
-    if (swiper2.activeIndex == 3 && swiper3.activeIndex == 1) {
-      swiper2.slidePrev();
-
-      return;
-    }
-    if (swiper2.activeIndex == 2 && swiper3.activeIndex == 1) {
-      swiper2.slidePrev();
-      swiper3.slidePrev();
-
-      return;
-    }
-    if (swiper2.activeIndex == 1 && swiper3.activeIndex == 0) {
-      swiper2.slidePrev();
-
-      return;
-    }
-    if (swiper2.activeIndex == 0 && swiper3.activeIndex == 0) {
-      swiper.allowSlideNext = true;
-      swiper.allowSlidePrev = true;
-      swiper.slidePrev();
-      console.log("fire");
-      return;
-    }
-  }
+  speed: 1000,
+  direction: "vertical",
 });
 
 const swiper2 = new Swiper(".swiper-container2", {
@@ -373,21 +309,9 @@ const swiper2 = new Swiper(".swiper-container2", {
   nested: true,
   parallax: true,
   resistanceRatio: 0,
-
-  speed: 1000,
-
-  // Navigation arrows
-
-  direction: "vertical",
-
-  // If we need pagination
-
-  // Navigation arrows
-});
-const swiper3 = new Swiper(".swiper-container3", {
-  allowTouchMove: false,
-  nested: true,
-  parallax: true,
-  resistanceRatio: 0,
   speed: 1000,
 });
+
+var scene1 = document.getElementById("scene1");
+var parallaxInstance = new Parallax(scene1);
+scene1.invert(x);

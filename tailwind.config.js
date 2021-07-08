@@ -10,12 +10,18 @@ module.exports = {
         sanReg: ["sanReg"],
       },
       colors: {
+        lightYellow: "#FEF5E1",
         yellow: "#fdb913",
         green: "#009444",
         "dark-green": "#002a28",
         white: "#fffbf3",
         black: "#002a28",
       },
+      backgroundImage: (theme) => ({
+        "quater-circle": "url('../dist/assets/quater-circle.png')",
+        "half-circle": "url('../dist/assets/half-circle.png')",
+        circle: "url('../dist/assets/circle.png')",
+      }),
     },
     screens: {
       xs: "375px",

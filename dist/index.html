@@ -17,171 +17,57 @@
     <title>Document</title>
   </head>
   <body>
-    <div class="swiper-container w-full h-screen">
-      <!-- Additional required wrapper -->
-      <div class="swiper-wrapper w-full h-full">
-        <!-- Slides -->
-
+    <div class="fixed top-0 left-0 w-full h-full z-40 pointer-events-none">
+      <div class="quote-slide h-full opacity-0 bg-yellow pointer-events-none">
+        <div class="w-full h-2/6">
+          <div class="w-11/12 m-auto pt-7vh">
+            <div class="relative">
+              <div class="absolute w2 bg-white h-full left-0"></div>
+              <div class="text-black pl-5">
+                <div class="font-sanBold text-4xl sm:text-5xl">
+                  สู่เสียงสะท้อนแห่งความสำเร็จ
+                </div>
+                <div class="font-sanReg sm:text-3xl sm:mt-3">
+                  ของบุคคลที่มีปัญหาด้านสถานะและสิทธิ
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
         <div
           class="
-            section1
-            swiper-slide
-            bg-dark-green
-            font-prompt
-            h-full
-            flex
-            justify-center
-            items-center
+            w-full
+            h-4/6
+            flex flex-col
+            lg:relative lg:flex-row-reverse lg:h-4/6
           "
         >
-          <div class="container s1">
-            <div class="group1">
-              <div class="item1 text-yellow text-3xl md:text-6xl">
-                คนไร้สิทธิ์
-              </div>
+          <div class="w-full h-2/6 lg:h-full lg:w-1/2 pl-3 pr-3">
+            <div
+              class="
+                quote-box
+                relative
+                text-xs
+                xs:text-base
+                sm:text-xl sm:w-3/4 sm:ml-auto
+                lg:ml-0 lg:mr-auto lg:w-full lg:bottom-6
+                xl:w-5/6 xl:max-w-xl xl:text-2xl
+              "
+            >
+              <img class="" src="../dist/assets/quote-box.png" alt="" />
               <div
                 class="
-                  item2
-                  md:mt-3
-                  text-white
-                  whitespace-nowrap
-                  text-2xl
-                  md:text-3xl
+                  absolute
+                  overflow-y-hidden
+                  top-0
+                  w-full
+                  h-97per
+                  pt-10per
+                  pr-5
+                  pl-10per
                 "
               >
-                ขั้นพื้นฐานด้านสาธารณสุข
-              </div>
-            </div>
-            <div class="divider flex items-center justify-center">
-              <div class="inner bg-yellow"></div>
-            </div>
-            <div class="group2 flex">
-              <div class="item-wrap text-yellow text-3xl md:text-6xl">
-                <div class="item1">ต้องอดทน</div>
-                <div class="item2"><span>อีกนาน</span></div>
-                <div class="item3"><span>แค่ไหน</span></div>
-              </div>
-
-              <div class="item-wrap2 text-yellow text-3xl md:text-6xl">?</div>
-            </div>
-          </div>
-        </div>
-        <div
-          class="
-            section2
-            swiper-slide
-            bg-dark-green
-            font-prompt
-            flex
-            justify-center
-            items-center
-          "
-        >
-          <div class="container w-5/6 m-auto">
-            <div class="flex flex-col">
-              <div class="text-white font-light text-xl1 sm:text-3xl">
-                <span class="w-max"
-                  >ถึงแม้ประเทศไทยจะได้ขยายหลักประกันสุขภาพ</span
-                >
-                <br class="hidden xs:block" />
-                <span>ครอบคลุมคนไทยทุกคนตั้งแต่ปี 2545</span>
-              </div>
-              <div class="pl-5 sm:pl-10 relative mt-3 sm:mt-7">
-                <div class="absolute bg-yellow w3 left-0 h-full"></div>
-                <div class="">
-                  <div class="text-yellow font-medium text-3xl sm:text-6xl">
-                    แต่ในความเป็นจริง
-                  </div>
-                  <div
-                    class="
-                      text-yellow
-                      font-medium
-                      xs:w-max
-                      text-2xl
-                      sm:text-4xl sm:mt-3
-                    "
-                  >
-                    ไม่สามารถครอบคลุมได้ทุกคน
-                  </div>
-                  <div class="text-white max font-light text-xl1 sm:text-3xl">
-                    <span class="sm:mt-1 sm:block"
-                      >ทำให้มีบุคคลที่ยังมีปัญหาสถานะและสิทธิได้รับ</span
-                    >
-
-                    <span class="sm:mt-1 sm:block"
-                      >เพียงการสงเคราห์ตามหลักมนุษยธรรมเท่านั้น</span
-                    >
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="swiper-slide relative bg-yellow">
-          <div class="w-full h-2/6">
-            <div class="container w-5/6 m-auto pt-7vh">
-              <div class="relative">
-                <div class="absolute w2 bg-white h-full left-0"></div>
-                <div class="text-black pl-5">
-                  <div class="font-sanBold text-4xl">
-                    สู่เสียงสะท้อนแห่งความสำเร็จ
-                  </div>
-                  <div class="font-sanReg">
-                    ของบุคคลที่มีปัญหาด้านสถานะและสิทธิ
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="w-full h-4/6 flex flex-col-reverse">
-            <div class="w-full h-4/6 relative">
-              <div class="swiper-container3 h-full pointer-events-none">
-                <!-- Additional required wrapper -->
-                <div class="swiper-wrapper">
-                  <!-- Slides -->
-                  <div class="swiper-slide">
-                    <img
-                      data-swiper-parallax="-300"
-                      class="object-contain h-full object-bottom"
-                      src="./assets/images/IMG_14.png"
-                      alt=""
-                    />
-                  </div>
-                  <div class="swiper-slide">
-                    <img
-                      class="object-contain h-full object-bottom"
-                      src="./assets/images/IMG_15.png"
-                      alt=""
-                    />
-                  </div>
-                  <div class="swiper-slide">
-                    <img
-                      data-swiper-parallax="-300"
-                      class="object-contain h-full object-bottom"
-                      src="./assets/images/IMG_16.png"
-                      alt=""
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="w-full h-2/6 pl-5 pr-5">
-              <div class="quote-box relative overflow-y-hidden">
-                <img src="../dist/assets/quote-box.png" alt="" />
-                <div
-                  class="
-                    swiper-container2
-                    absolute
-                    w-5/6
-                    h-full
-                    top-30per
-                    left-12per
-                    overflow-y-hidden
-                    pointer-events-none
-                  "
-                >
-                  <!-- Additional required wrapper -->
+                <div class="swiper-container overflow-y-hidden w-full h-full">
                   <div class="swiper-wrapper font-sanReg">
                     <!-- Slides -->
                     <div class="swiper-slide">
@@ -204,7 +90,16 @@
                       แต่พอไปรักษาตัวที่โรงพยาบาล ถึงรู้ว่าได้รับสิทธิตัวนี้
                       ดีใจมากๆ ค่ะ
                     </div>
-                    <div class="swiper-slide">
+                    <div
+                      class="
+                        swiper-slide
+                        text-xs
+                        xs:text-sm
+                        sm:text-lg
+                        lg:text-xl
+                        xl:text-2xl
+                      "
+                    >
                       หากเกิดโรคอุบัติใหม่ในพื้นที่ห่างไกล การป้องกัน
                       และรักษาที่รวดเร็ว จะช่วยลดการแพร่กระจายเชื้อ ลดป่วย ลดตาย
                       ซึ่งต้องขอบคุณกองทุนนี้มากๆ ค่ะ
@@ -214,15 +109,271 @@
               </div>
             </div>
           </div>
+          <div class="w-full h-4/6 lg:h-full lg:w-full lg:absolute">
+            <div class="swiper-container2 h-full">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img
+                    data-swiper-parallax="-300"
+                    class="object-contain h-full object-bottom"
+                    src="./assets/images/IMG_14.png"
+                    alt=""
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    class="object-contain h-full object-bottom"
+                    src="./assets/images/IMG_15.png"
+                    alt=""
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    data-swiper-parallax="-300"
+                    class="object-contain h-full object-bottom"
+                    src="./assets/images/IMG_16.png"
+                    alt=""
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
+    <div id="fullpage" class="relative">
+      <div class="section bg-lightYellow">
+        <div class="h-screen relative flex flex-col lg:flex-row">
+          <div
+            class="
+              absolute
+              h-1/2
+              w-full
+              bg-quater-circle
+              bottom-0
+              bg-contain bg-right-bottom bg-no-repeat
+              lg:bg-half-circle
+              lg:h-full
+              lg:w-5/12
+              lg:right-0
+              lg:bg-cover
+              lg:bg-left
+            "
+          ></div>
+          <div
+            class="
+              absolute
+              h-1/2
+              bottom-0
+              doctor
+              bg-no-repeat
+              w-full
+              bg-contain bg-right-bottom
+              lg:h-full lg:w-8/12 lg:bottom-0 lg:right-0 lg:bg-contain
+            "
+          ></div>
+          <div class="w-full h-1/2 lg:w-1/2 lg:h-full"></div>
+          <div class="w-full h-1/2 lg:w-1/2 lg:h-full">
+            <div class="relative h-full">
+              <div id="scene1" class="absolute w-full h-full">
+                <div data-depth="0.2" class="absolute w-full h-full">
+                  <div
+                    class="
+                      ob1
+                      absolute
+                      bg-white
+                      rounded-full
+                      flex
+                      items-center
+                      justify-center
+                      top-1/2
+                      left-1/2
+                      transform
+                      border-2 border-yellow
+                    "
+                  >
+                    ddd
+                  </div>
+                </div>
+                <div data-depth="0.2" class="absolute w-full h-full">
+                  <div
+                    class="
+                      ob2
+                      absolute
+                      bg-white
+                      rounded-full
+                      flex
+                      items-center
+                      justify-center
+                      top-1/2
+                      left-1/2
+                      transform
+                      border-2 border-yellow
+                    "
+                  >
+                    ddd
+                  </div>
+                </div>
+                <div data-depth="0.2" class="absolute w-full h-full">
+                  <div
+                    class="
+                      ob3
+                      absolute
+                      bg-white
+                      rounded-full
+                      flex
+                      items-center
+                      justify-center
+                      top-1/2
+                      left-1/2
+                      transform
+                      border-2 border-yellow
+                    "
+                  >
+                    ddd
+                  </div>
+                </div>
+                <div data-depth="0.2" class="absolute w-full h-full">
+                  <div
+                    class="
+                      ob4
+                      absolute
+                      bg-white
+                      rounded-full
+                      flex
+                      items-center
+                      justify-center
+                      top-1/2
+                      left-1/2
+                      transform
+                      border-2 border-yellow
+                    "
+                  >
+                    ddd
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="
+          section
+          section1
+          bg-dark-green
+          font-prompt
+          h-full
+          flex
+          justify-center
+          items-center
+        "
+      >
+        <div class="container s1">
+          <div class="group1">
+            <div class="item1 text-yellow text-3xl md:text-6xl">
+              คนไร้สิทธิ์
+            </div>
+            <div
+              class="
+                item2
+                md:mt-3
+                text-white
+                whitespace-nowrap
+                text-2xl
+                md:text-3xl
+              "
+            >
+              ขั้นพื้นฐานด้านสาธารณสุข
+            </div>
+          </div>
+          <div class="divider flex items-center justify-center">
+            <div class="inner bg-yellow"></div>
+          </div>
+          <div class="group2 flex">
+            <div class="item-wrap text-yellow text-3xl md:text-6xl">
+              <div class="item1">ต้องอดทน</div>
+              <div class="item2"><span>อีกนาน</span></div>
+              <div class="item3"><span>แค่ไหน</span></div>
+            </div>
+
+            <div class="item-wrap2 text-yellow text-3xl md:text-6xl">?</div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="
+          section2
+          section
+          bg-dark-green
+          font-prompt
+          flex
+          justify-center
+          items-center
+          beforeQuote
+        "
+      >
+        <div class="container w-5/6 m-auto">
+          <div class="flex flex-col">
+            <div class="text-white font-light text-xl1 sm:text-3xl">
+              <span class="w-max"
+                >ถึงแม้ประเทศไทยจะได้ขยายหลักประกันสุขภาพ</span
+              >
+              <br class="hidden xs:block" />
+              <span>ครอบคลุมคนไทยทุกคนตั้งแต่ปี 2545</span>
+            </div>
+            <div class="pl-5 sm:pl-10 relative mt-3 sm:mt-7">
+              <div class="absolute bg-yellow w3 left-0 h-full"></div>
+              <div class="">
+                <div class="text-yellow font-medium text-3xl sm:text-6xl">
+                  แต่ในความเป็นจริง
+                </div>
+                <div
+                  class="
+                    text-yellow
+                    font-medium
+                    xs:w-max
+                    text-2xl
+                    sm:text-4xl sm:mt-3
+                  "
+                >
+                  ไม่สามารถครอบคลุมได้ทุกคน
+                </div>
+                <div class="text-white max font-light text-xl1 sm:text-3xl">
+                  <span class="sm:mt-1 sm:block"
+                    >ทำให้มีบุคคลที่ยังมีปัญหาสถานะและสิทธิได้รับ</span
+                  >
+
+                  <span class="sm:mt-1 sm:block"
+                    >เพียงการสงเคราห์ตามหลักมนุษยธรรมเท่านั้น</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="section section3 fpQuoteSlide fpQuoteSlide1 bg-gray-400"
+      ></div>
+      <div class="section section4 fpQuoteSlide fpQuoteSlide2 bg-yellow"></div>
+      <div
+        class="section section5 fpQuoteSlide fpQuoteSlide3 bg-gray-400"
+      ></div>
+      <div class="section section4 fpQuoteSlide fpQuoteSlide4 bg-yellow"></div>
+      <div
+        class="section section5 fpQuoteSlide fpQuoteSlide5 bg-gray-400"
+      ></div>
+      <div class="section section6 afterQuote bg-yellow"></div>
+    </div>
   </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
   <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script src="library/fullPage.js-master/dist/fullpage.min.js"></script>
   <script src="library/gsap/minified/gsap.min.js"></script>
   <script src="library/gsap/minified/ScrollTrigger.min.js"></script>
+  <script src="library/gsap/minified/ScrollToPlugin.min.js"></script>
   <script src="library/gsap/minified/Flip.min.js"></script>
   <script src="library/gsap/minified/ScrambleTextPlugin.min.js"></script>
   <script src="js/main.js"></script>
