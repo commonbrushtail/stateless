@@ -200,16 +200,14 @@ ScrollTrigger.matchMedia({
     s1TL.play();
   },
   */
+  "(min-width: 320px) and (max-width: 768px)": function () {},
 });
 
 new fullpage("#fullpage", {
   //options here
   autoScrolling: true,
   onLeave: function (origin, destination, direction) {
-    if (
-      origin.item.classList.contains("beforeQuote") &&
-      destination.item.classList.contains("fpQuoteSlide1")
-    ) {
+    if (origin.item.classList.contains("beforeQuote") && destination.item.classList.contains("fpQuoteSlide1")) {
       gsap.fromTo(
         ".quote-slide",
         {
@@ -222,10 +220,7 @@ new fullpage("#fullpage", {
         }
       );
     }
-    if (
-      destination.item.classList.contains("beforeQuote") &&
-      origin.item.classList.contains("fpQuoteSlide1")
-    ) {
+    if (destination.item.classList.contains("beforeQuote") && origin.item.classList.contains("fpQuoteSlide1")) {
       gsap.fromTo(
         ".quote-slide",
         {
@@ -239,10 +234,7 @@ new fullpage("#fullpage", {
       );
     }
 
-    if (
-      destination.item.classList.contains("afterQuote") &&
-      origin.item.classList.contains("fpQuoteSlide5")
-    ) {
+    if (destination.item.classList.contains("afterQuote") && origin.item.classList.contains("fpQuoteSlide5")) {
       gsap.fromTo(
         ".quote-slide",
         {
@@ -256,10 +248,7 @@ new fullpage("#fullpage", {
       );
     }
 
-    if (
-      destination.item.classList.contains("fpQuoteSlide5") &&
-      origin.item.classList.contains("afterQuote")
-    ) {
+    if (destination.item.classList.contains("fpQuoteSlide5") && origin.item.classList.contains("afterQuote")) {
       gsap.fromTo(
         ".quote-slide",
         {
@@ -313,5 +302,68 @@ const swiper2 = new Swiper(".swiper-container2", {
 });
 
 var scene1 = document.getElementById("scene1");
-var parallaxInstance = new Parallax(scene1);
-scene1.invert(x);
+var parallaxInstance = new Parallax(scene1, {
+  pointerEvents: true,
+});
+var rippleTimeLine = gsap.timeline({
+  pause: true,
+  reverse: true,
+});
+
+let ob = document.querySelectorAll(".ob");
+let ob1 = document.querySelector(".ob1");
+gsap.set(ob1, {
+  scale: 1.5,
+});
+gsap.set(ob1.children[1], {
+  scale: 0.55,
+});
+gsap.set(ob1.children[2], {
+  height: "100%",
+  autoAlpha: 1,
+});
+ob.forEach((element) => {
+  element.addEventListener("mouseover", () => {
+    rippleTimeLine.fromTo(
+      element.firstElementChild,
+      {
+        scale: 1.01,
+      },
+      {
+        scale: 1.3,
+        duration: 0.8,
+        repeat: -1,
+      }
+    );
+  });
+  element.addEventListener("mouseleave", () => {
+    rippleTimeLine.clear();
+    rippleTimeLine.to(element.firstElementChild, {
+      scale: 1,
+    });
+  });
+  element.addEventListener("click", (e) => {
+    ob.forEach((element) => {
+      gsap.to(element, {
+        scale: 1,
+      });
+      gsap.to(element.children[1], {
+        scale: 1,
+      });
+      gsap.to(element.children[2], {
+        height: 0,
+        autoAlpha: 0,
+      });
+    });
+    gsap.to(e.currentTarget, {
+      scale: 1.5,
+    });
+    gsap.to(e.currentTarget.children[1], {
+      scale: 0.55,
+    });
+    gsap.to(e.currentTarget.children[2], {
+      height: "100%",
+      autoAlpha: 1,
+    });
+  });
+});
