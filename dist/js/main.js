@@ -1,206 +1,156 @@
 gsap.registerPlugin(ScrambleTextPlugin, ScrollTrigger, Flip, ScrollToPlugin);
 
 ScrollTrigger.matchMedia({
-  // large
-  // medium
-  /*
-  "(min-width: 320px) and (max-width: 768px)": function () {
-    function s1Flip() {
-      let containers1 = document.querySelector(".container.s1");
-      let group1s1 = document.querySelector(".container.s1 .group1");
-      let group2s1 = document.querySelector(".container.s1 .group2");
-      let state1s1 = Flip.getState(group1s1);
-      let state2s1 = Flip.getState(group2s1);
-
-      containers1.style.flexDirection = "column";
-
-      Flip.from(state1s1, {
-        duration: 1,
-      });
-      Flip.from(state2s1, {
-        duration: 1,
-      });
-    }
-    let containers1 = document.querySelector(".container.s1");
-    var s1TL = gsap.timeline({ paused: true });
-    s1TL.from(containers1, {
+  "(min-width: 320px) and (max-width: 1024px)": function () {
+    var s1TL = gsap.timeline();
+    s1TL.set(".a2, .a3, .a4, .a5", {
       autoAlpha: 0,
-      duration: 2,
     });
-    s1TL.from(containers1, {
-      onStart: () => {
-        s1Flip();
-      },
+    s1TL.set(".a3, .a4, .a5", {
+      position: "absolute",
+      autoAlpha: 0,
     });
-
-    s1TL.to(".divider", {
-      height: "25px",
-
-      delay: 1.2,
-    });
-    s1TL.to(
-      ".divider .inner",
+    s1TL.fromTo(
+      ".a1",
       {
-        width: "60vw",
-        height: "2px",
+        autoAlpha: 0,
       },
-      "<"
-    );
-    s1TL.set(
-      ".s1 .group2 .item-wrap .item2,.s1 .group2 .item-wrap .item3",
       {
-        height: "auto",
-      },
-      "start"
-    );
-
-    s1TL.from(
-      ".s1 .group2 .item-wrap .item2,.s1 .group2 .item-wrap .item3",
-      {
-        height: 0,
-        duration: 0.5,
-        ease: Power4.easeOut,
-      },
-      "<"
-    );
-    s1TL.to(
-      ".s1 .group2 .item-wrap .item2,.s1 .group2 .item-wrap .item3",
-      {
+        scale: 1.3,
         autoAlpha: 1,
-        duration: 0.3,
-      },
-      "<"
+        duration: 2,
+      }
     );
-    s1TL.set(
-      ".s1 .group1 .item2",
-      {
-        height: "auto",
-      },
-      "start"
-    );
-
-    s1TL.from(
-      ".s1 .group1 .item2",
-      {
-        height: 0,
-        duration: 0.5,
-        ease: Power4.easeOut,
-      },
-      "<"
-    );
-    s1TL.to(
-      ".s1 .group1 .item2",
+    s1TL.to(".a1", {
+      scale: 1,
+    });
+    s1TL.to(".a2", {
+      autoAlpha: 1,
+    });
+    s1TL.fromTo(
+      ".a3",
       {
         position: "static",
+        autoAlpha: 0,
+        width: 0,
       },
-      "<"
-    );
-    s1TL.to(
-      ".s1 .group1 .item1",
-      {
-        textAlign: "center",
-      },
-      "<"
-    );
-    s1TL.to(
-      ".s1 .group1 .item2",
       {
         autoAlpha: 1,
-        delay: 0.2,
-        duration: 0.5,
-      },
-      "<"
-    );
-    s1TL.to(
-      ".s1 .group2 .item-wrap2",
-      {
-        fontSize: "110px",
-        y: "0px",
-      },
-      "<"
-    );
-
-    s1TL.play();
-  },
-
-  "(min-width: 769px)": function () {
-    var s1TL = gsap.timeline({ paused: true });
-    s1TL.from(".s1 .group1 .item1", {
-      x: "50%",
-      delay: 1.5,
-    });
-    s1TL.from(
-      ".s1 .group2 .item1,.s1 .group2 .item-wrap2",
-      {
-        autoAlpha: 0,
-        duration: 1.5,
-      },
-      "<"
-    );
-    s1TL.to(".s1 .divider", {
-      width: "5%",
-    });
-    s1TL.to(
-      ".s1 .divider .inner",
-      {
-        height: "200px",
-        width: "2px",
-      },
-      "<"
-    );
-
-    s1TL.set(
-      ".s1 .group2 .item-wrap .item2,.s1 .group2 .item-wrap .item3",
-      {
-        height: "auto",
-      },
-      "start"
-    );
-    s1TL.from(
-      ".s1 .group2 .item-wrap .item2,.s1 .group2 .item-wrap .item3",
-      {
-        height: 0,
-
+        width: "100%",
         duration: 1,
-        ease: Power4.easeOut,
-      },
-      "<"
+      }
     );
-    s1TL.from(
-      ".s1 .group2 .item-wrap .item2,.s1 .group2 .item-wrap .item3",
-      {
-        autoAlpha: 0,
-        duration: 0.5,
-      },
-      "<"
-    );
+    s1TL.to(".a3", {
+      marginTop: "20px",
+      marginBottom: "20px",
+    });
     s1TL.to(
-      ".s1 .group1 .item2",
+      ".a3",
       {
-        display: "block",
+        width: "80%",
+      },
+      "<"
+    );
+    s1TL.fromTo(
+      ".a4",
+      {
+        position: "absolute",
+      },
+      {
         autoAlpha: 1,
       },
       "<"
     );
+    s1TL.to(".aWrap", {
+      y: "-50%",
+    });
+    s1TL.to(".a5", {
+      scale: 3,
+      autoAlpha: 1,
+      x: "250%",
+      y: "7%",
+    });
     s1TL.to(
-      ".group2 .item-wrap2",
+      ".a4",
       {
-        fontSize: "200px",
-        duration: 0.5,
-      },
-      "+=0"
-    );
-    s1TL.to(
-      ".group1",
-      {
-        y: "-40%",
+        autoAlpha: 1,
+        x: "-35%",
       },
       "<"
     );
-    s1TL.play();
+
+    /*
+    s1TL.to(".a2", {
+      display: "block",
+      autoAlpha: 1,
+      duration: 1.5,
+    });
+    */
   },
-  */
-  "(min-width: 320px) and (max-width: 768px)": function () {},
+  "(min-width: 1025px)": function () {
+    var s1TL = gsap.timeline();
+    s1TL.set(".a2, .a3, .a4, .a5", {
+      autoAlpha: 0,
+    });
+    s1TL.set(".a3, .a4, .a5", {
+      position: "absolute",
+      autoAlpha: 0,
+    });
+    s1TL.fromTo(
+      ".a1",
+      {
+        autoAlpha: 0,
+      },
+      {
+        scale: 1.3,
+        autoAlpha: 1,
+        duration: 2,
+      }
+    );
+    s1TL.to(".a1", {
+      scale: 1,
+    });
+    s1TL.to(".a2", {
+      autoAlpha: 1,
+    });
+    s1TL.to(".a1-2-wrap", {
+      x: "-60%",
+    });
+    s1TL.to(".a3", {
+      autoAlpha: 1,
+    });
+    s1TL.fromTo(
+      ".a4",
+      {
+        x: "50%",
+        y: "-14%",
+      },
+      {
+        x: "65%",
+        y: "-14%",
+        autoAlpha: 1,
+      }
+    );
+    s1TL.fromTo(
+      ".a5",
+      {
+        x: "1200%",
+        y: "-42%",
+      },
+      {
+        x: "1449%",
+        y: "-42%",
+
+        autoAlpha: 1,
+      },
+      "<"
+    );
+    s1TL.to(".a5", {
+      scale: 6,
+      x: "1638%",
+      y: "45%",
+    });
+  },
 });
 
 new fullpage("#fullpage", {
@@ -301,8 +251,8 @@ const swiper2 = new Swiper(".swiper-container2", {
   speed: 1000,
 });
 
-var scene1 = document.getElementById("scene1");
-var parallaxInstance = new Parallax(scene1, {
+var scene23 = document.getElementById("scene23");
+var parallaxInstance = new Parallax(scene23, {
   pointerEvents: true,
 });
 var rippleTimeLine = gsap.timeline({
@@ -364,6 +314,63 @@ ob.forEach((element) => {
     gsap.to(e.currentTarget.children[2], {
       height: "100%",
       autoAlpha: 1,
+    });
+  });
+});
+
+let oh = document.querySelectorAll(".oh");
+let oh1 = document.querySelector(".oh1");
+
+gsap.set(oh1.children[1], {
+  scale: 0.7,
+});
+gsap.set(oh1.children[2], {
+  height: "max-content",
+  autoAlpha: 1,
+  marginTop: "10px",
+});
+oh.forEach((element) => {
+  element.addEventListener("mouseover", () => {
+    rippleTimeLine.fromTo(
+      element.firstElementChild,
+      {
+        scale: 1.01,
+      },
+      {
+        scale: 1.3,
+        duration: 0.8,
+        repeat: -1,
+      }
+    );
+  });
+  element.addEventListener("mouseleave", () => {
+    rippleTimeLine.clear();
+    rippleTimeLine.to(element.firstElementChild, {
+      scale: 1,
+    });
+  });
+  element.addEventListener("click", (e) => {
+    oh.forEach((element) => {
+      gsap.to(element, {
+        scale: 1,
+      });
+      gsap.to(element.children[1], {
+        scale: 1,
+      });
+      gsap.to(element.children[2], {
+        height: 0,
+        autoAlpha: 0,
+        marginTop: "0px",
+      });
+    });
+
+    gsap.to(e.currentTarget.children[1], {
+      scale: 0.7,
+    });
+    gsap.to(e.currentTarget.children[2], {
+      height: "max-content",
+      autoAlpha: 1,
+      marginTop: "10px",
     });
   });
 });

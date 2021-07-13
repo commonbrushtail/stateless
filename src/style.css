@@ -13,6 +13,10 @@
     font-family: "sanReg";
     src: url("fonts/IBMPlexSansThai-Regular.ttf");
   }
+  @font-face {
+    font-family: "heaven";
+    src: url("fonts/DB-Heavent.ttf");
+  }
 }
 
 @layer utilities {
@@ -46,6 +50,11 @@
   }
   .h-50vh {
     height: 50vh;
+  }
+  .text-stroke {
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #fdb913;
+    color: transparent;
   }
   .pt-7vh {
     padding-top: 7vh;
@@ -175,124 +184,206 @@ body {
 .doctor {
   background-image: url("../dist/assets/images/IMG_09.png");
 }
+.hand {
+  background-image: url("../dist//assets//images/IMG_10.png");
+}
 
-.ob1 {
+.ob {
   width: 85px;
   height: 85px;
+  @screen md {
+    width: 150px;
+    height: 150px;
+  }
+  @screen xl {
+    width: 160px;
+    height: 160px;
+  }
+  @screen ipad {
+    width: 150px;
+    height: 150px;
+  }
+}
+.ob1 {
   transform: translate(58%, -223%);
-  @media (min-width: 375px) {
+  @screen xs {
     transform: translate(50%, -244%);
   }
-  @media (min-width: 400px) {
-    transform: translate(55%, -278%);
+
+  @screen md {
+    transform: translate(109%, -259%);
   }
-  @media (min-width: 768px) {
-    width: 150px;
-    height: 150px;
-    transform: translate(59%, -220%);
+  @screen ipad {
+    transform: translate(-59%, -231%);
   }
-  @media (min-width: 1024px) {
-    width: 150px;
-    height: 150px;
-    transform: translate(-131%, -231%);
+  @screen xl {
+    transform: translate(-94%, -262%);
   }
-  @media (min-width: 1280px) {
-    transform: translate(-184%, -220%);
+  @screen 2xl {
+    transform: translate(-86%, -220%);
   }
-  @media (min-width: 1536px) {
-    transform: translate(-240%, -220%);
-  }
-  @media (min-width: 1800px) {
-    transform: translate(-206%, -279%);
+  @screen 3xl {
+    transform: translate(-119%, -264%);
   }
 }
 .ob2 {
-  width: 85px;
-  height: 85px;
   transform: translate(-64%, -177%);
-  @media (min-width: 375px) {
+  @screen xs {
     transform: translate(-74%, -193%);
   }
-  @media (min-width: 400px) {
-    transform: translate(-74%, -193%);
+
+  @screen md {
+    transform: translate(-23%, -169%);
   }
-  @media (min-width: 768px) {
-    width: 150px;
-    height: 150px;
-    transform: translate(-54%, -148%);
+  @screen ipad {
+    transform: translate(-151%, -126%);
   }
-  @media (min-width: 1024px) {
-    width: 150px;
-    height: 150px;
-    transform: translate(-216%, -131%);
+  @screen xl {
+    transform: translate(-182%, -133%);
   }
-  @media (min-width: 1280px) {
-    transform: translate(-264%, -121%);
+  @screen 2xl {
+    transform: translate(-194%, -112%);
   }
-  @media (min-width: 1536px) {
-    transform: translate(-302%, -112%);
-  }
-  @media (min-width: 1800px) {
-    transform: translate(-307%, -162%);
+  @screen 3xl {
+    transform: translate(-231%, -162%);
   }
 }
 .ob3 {
-  width: 85px;
-  height: 85px;
   transform: translate(-153%, -102%);
-  @media (min-width: 375px) {
+  @screen xs {
     transform: translate(-158%, -102%);
   }
-  @media (min-width: 400px) {
-    transform: translate(-171%, -89%);
+
+  @screen md {
+    transform: translate(-121%, -52%);
   }
-  @media (min-width: 768px) {
-    width: 150px;
-    height: 150px;
-    transform: translate(-108%, -43%);
+  @screen ipad {
+    transform: translate(-148%, 2%);
   }
-  @media (min-width: 1024px) {
-    width: 150px;
-    height: 150px;
-    transform: translate(-253%, -17%);
-  }
-  @media (min-width: 1280px) {
+  @screen xl {
     transform: translate(-300%, 6%);
   }
-  @media (min-width: 1536px) {
-    transform: translate(-328%, 13%);
+  @screen 2xl {
+    transform: translate(-212%, 13%);
   }
-  @media (min-width: 1800px) {
-    transform: translate(-358%, 13%);
+  @screen 3xl {
+    transform: translate(-294%, 13%);
   }
 }
 .ob4 {
-  width: 85px;
-  height: 85px;
   transform: translate(-162%, 21%);
-  @media (min-width: 375px) {
+  @screen xs {
     transform: translate(-176%, 35%);
   }
-  @media (min-width: 400px) {
-    transform: translate(-198%, 43%);
-  }
-  @media (min-width: 768px) {
-    width: 150px;
-    height: 150px;
+
+  @screen md {
     transform: translate(-131%, 68%);
   }
-  @media (min-width: 1024px) {
-    width: 150px;
-    height: 150px;
-    transform: translate(-194%, 123%);
+  @screen ipad {
+    transform: translate(-66%, 124%);
   }
-  @media (min-width: 1280px) {
-    transform: translate(-194%, 123%);
+  @screen xl {
+    transform: translate(-194%, 145%);
   }
-  @media (min-width: 1536px) {
-    transform: translate(-194%, 123%);
+  @screen 2xl {
+    transform: translate(-135%, 123%);
   }
-  @media (min-width: 1800px) {
-    transform: translate(-194%, 123%);
+  @screen 3xl {
+    transform: translate(-173%, 164%);
+  }
+}
+
+.ripple {
+  z-index: -1;
+}
+.bubble {
+  pointer-events: all;
+  top: 50%;
+  left: 50%;
+}
+.layer {
+  pointer-events: none;
+}
+
+.hand-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "h1 ."
+    "h1 h5"
+    "h2 h5"
+    "h2 h6"
+    "h3 h6"
+    "h3 h7"
+    "h4 h7"
+    "h4 .";
+  @screen xl {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      "h4 h4 h3 h3 h2 h2 h1 h1"
+      ". h7 h7 h6 h6 h5 h5 .";
+  }
+  @screen ipad {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      "h4 h4 h3 h3 h2 h2 h1 h1"
+      ". h7 h7 h6 h6 h5 h5 .";
+  }
+}
+.h1 {
+  grid-area: h1;
+}
+.h2 {
+  grid-area: h2;
+}
+.h3 {
+  grid-area: h3;
+}
+.h4 {
+  grid-area: h4;
+}
+.h5 {
+  grid-area: h5;
+}
+.h6 {
+  grid-area: h6;
+}
+.h7 {
+  grid-area: h7;
+}
+
+.oh {
+  width: 85px;
+  height: 85px;
+  @screen xs {
+    width: 107px;
+    height: 107px;
+  }
+  @screen sm {
+    width: 120px;
+    height: 120px;
+  }
+
+  @screen xl {
+    width: 185px;
+    height: 185px;
+  }
+  @screen 2xl {
+    width: 220px;
+    height: 220px;
+  }
+  @screen 3xl {
+    width: 270px;
+    height: 270px;
+  }
+  @screen ipad {
+    width: 170px;
+    height: 170px;
   }
 }
