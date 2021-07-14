@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="library/fullPage.js-master/dist/fullpage.min.css" />
+    <link rel="stylesheet" href="library//image-compare/image-compare-viewer.min.css" />
     <title>Document</title>
   </head>
   <body>
@@ -64,7 +65,8 @@
     </div>
     <div id="fullpage" class="relative">
       <div class="section section1 bg-dark-green font-prompt h-full flex justify-center items-center">
-        <div class="aWrap flex flex-col xl:flex-row relative xl:h-5/12">
+        <img class="absolute top-0 left-0 w-20 pl-2 pt-2 ipad:w-28 ipad:pt-4 ipad:pl-4 xl:w-44 xl:pt-12 xl:pl-12" " src="../dist/assets/images/Logo_THRF.png" alt="" />
+        <div class="aWrap flex flex-col relative xl:h-5/12 xl:flex-row ipad:h-5/12 ipad:flex-row">
           <div
             class="
               a1-2-wrap
@@ -74,42 +76,114 @@
               justify-center
               text-white text-xl
               xl:text-right xl:w-max xl:absolute xl:top-1/2 xl:left-1/2 xl:transform xl:-translate-y-1/2 xl:-translate-x-1/2 xl:text-4xl
+              ipad:text-right ipad:w-max ipad:absolute ipad:top-1/2 ipad:left-1/2 ipad:transform ipad:-translate-y-1/2 ipad:-translate-x-1/2 ipad:text-3xl
             "
           >
-            <div class="mx-auto xl:mx-0 a a1">บุคคลที่มีปัญหาสถานะและสิทธิ</div>
-            <div class="mx-auto xl:mx-0 a a2">กับสิทธิขั้นพื้นฐานด้านสาธารณสุข</div>
+            <div class="mx-auto xl:mx-0 ipad:mx-0 a a1">บุคคลที่มีปัญหาสถานะและสิทธิ</div>
+            <div class="mx-auto xl:mx-0 ipad:mx-0 a a2">กับสิทธิขั้นพื้นฐานด้านสาธารณสุข</div>
           </div>
-          <div class="a a3 w-10/12 h-2p bg-yellow mx-auto xl:mx-0 xl:w-3p xl:h-full xl:absolute xl:left-1/2 xl:top-1/2 xl:transform xl:-translate-y-1/2"></div>
-          <div class="flex w-full justify-center xl:w-full xl:absolute xl:top-1/4 xl:left-1/2 xl:transform xl:-translate-y-1/2 xl:-translate-x-1/2">
-            <div class="a a4 flex flex-col text-yellow font-sanBold text-4xl leading-tight xl:text-7xl">
+          <div
+            class="
+              a
+              a3
+              w-10/12
+              h-2p
+              bg-yellow
+              mx-auto
+              xl:mx-0 xl:w-3p xl:h-full xl:absolute xl:left-1/2 xl:top-1/2 xl:transform xl:-translate-y-1/2
+              ipad:mx-0 ipad:w-3p ipad:h-full ipad:absolute ipad:left-1/2 ipad:top-1/2 ipad:transform ipad:-translate-y-1/2
+            "
+          ></div>
+          <div
+            class="
+              flex
+              w-full
+              justify-center
+              xl:w-full xl:absolute xl:top-1/4 xl:left-1/2 xl:transform xl:-translate-y-1/2 xl:-translate-x-1/2
+              ipad:w-full ipad:absolute ipad:top-1/4 ipad:left-1/2 ipad:transform ipad:-translate-y-1/2 ipad:-translate-x-1/2
+            "
+          >
+            <div class="a a4 flex flex-col text-yellow font-sanBold text-4xl leading-tight xl:text-7xl ipad:text-6xl">
               <div class="">ต้องอดทน</div>
               <div class="">อีกนาน</div>
               <div class="">แค่ไหน</div>
             </div>
-            <div class="a a5 text-7xl text-stroke font-heaven">?</div>
+            <div class="a a5 text-7xl ipad:text-6xl text-stroke font-heaven">?</div>
           </div>
         </div>
       </div>
-      <div class="section2 section bg-dark-green font-prompt flex justify-center items-center">
-        <div class="container w-5/6 m-auto">
-          <div class="flex flex-col">
-            <div class="text-white font-light text-xl1 md:text-3xl">
-              <span class="w-max">ถึงแม้ประเทศไทยจะได้ขยายหลักประกันสุขภาพ</span>
-              <br class="hidden xs:block" />
-              <span>ครอบคลุมคนไทยทุกคนตั้งแต่ปี 2545</span>
+      <div class="section section2 bg-dark-green font-prompt h-full flex justify-center items-center relative">
+        <video loop data-autoplay class="absolute w-full h-full top-0 object-cover">
+          <source data-src="../dist/assets/video/VDO_01.mp4" type="video/mp4" />
+        </video>
+        <div class="flex flex-col relative xl:h-5/12 xl:flex-row ipad:h-5/12 ipad:flex-row">
+          <div class="flex flex-col font-sanReg items-centers justify-center text-white md:text-2xl xl:w-1/2 xl:text-right xl:pr-8 xl:text-3xl 2xl:text-4xl">
+            <div class="mx-auto xl:mx-0 ipad:mx-0">ถึงแม้ประเทศไทยได้ขยายหลักประกันสุขภาพ</div>
+            <div class="mx-auto xl:mx-0 ipad:mx-0">ครอบคลุมคนไทยทุกคน ตั้งแต่ปี 2545</div>
+          </div>
+          <div class="w-10/12 h-2p bg-yellow mx-auto my-4 xl:my-0 max-w-lg xl:w-3p xl:max-h-64 xl:h-full xl:absolute xl:left-1/2 xl:top-1/2 xl:transform xl:-translate-y-1/2"></div>
+          <div class="flex w-full justify-center xl:w-1/2 xl:items-center xl:justify-start">
+            <div class="flex flex-col text-center font-sanReg md:text-2xl xl:text-left xl:text-3xl 2xl:text-4xl xl:pl-8">
+              <div class="text-yellow font-sanBold text-4xl md:text-5xl leading-tight xl:leading-none xl:text-6xl ipad:text-6xl 2xl:text-6xl">แต่ความเป็นจริง</div>
+              <div class="text-white">พ.ร.บ. หลักประกันสุขภาพแห่งชาติ ปี 2545</div>
+              <div class="text-white">ให้สิทธิครอบคลุมเฉพาะบุคคลที่มีสัญชาติไทยเท่านั้น</div>
             </div>
-            <div class="pl-5 md:pl-10 relative mt-3 md:mt-7">
-              <div class="absolute bg-yellow w-3p left-0 h-full"></div>
-              <div class="">
-                <div class="text-yellow font-medium text-3xl md:text-6xl">แต่ในความเป็นจริง</div>
-                <div class="text-yellow font-medium xs:w-max text-2xl md:text-4xl md:mt-3">ไม่สามารถครอบคลุมได้ทุกคน</div>
-                <div class="text-white max font-light text-xl1 md:text-3xl">
-                  <span class="md:mt-1 md:block">ทำให้มีบุคคลที่ยังมีปัญหาสถานะและสิทธิได้รับ</span>
-
-                  <span class="md:mt-1 md:block">เพียงการสงเคราห์ตามหลักมนุษยธรรมเท่านั้น</span>
+          </div>
+        </div>
+      </div>
+      <div class="section bg-dark-green">
+        <div class="flex flex-col w-full h-full px-5 pt-5 pb-5 xl:flex-row">
+          <div class="h-max xl:w-6/12 xl:flex xl:flex-col xl:justify-center xl:max-w-xl 2xl:max-w-2xl xl:h-9/12 2xl:pl-24">
+            <div class="relative">
+              <div class="absolute w-3p bg-yellow h-full left-0"></div>
+              <div class="text-yellow pl-5 xl:pl-10">
+                <div class="font-sanBold leading-normal sm:text-2xl md:text-3xl xl:text-4xl">
+                  แผนภาพการกระจายของบุคคล <br class="hidden md:block" />
+                  ที่มีปัญหาสถานะและสิทธิ <br class="hidden xl:block" />
+                  ตามจังหวัดต่างๆ ปี 2563
                 </div>
               </div>
             </div>
+            <div class="font-sanReg leading-normal text-white mt-2 text-xs xs:text-base sm:text-lg xl:text-2xl xl:pl-10 xl:pt-12">
+              บุคคลที่มีปัญหาสถานะและสิทธิ ได้กระจายอยู่ตามจังหวัดต่างๆ ทั่วประเทศ โดยมี 10 จังหวัดที่มีอาศัยอยู่มากที่สุด ได้แก่ เชียงใหม่ เชียงราย ตาก กาญจนบุรี แม่ฮ่องสอน ระนอง ราชบุรี
+              กรุงเทพมหานคร ตราด ประจวบคีรีขันธ์
+            </div>
+          </div>
+          <div class="relative mt-5 h-full w-full flex flex-col xl:w-4/12 xl:justify-center">
+            <div class="absolute right-0 bottom-0 w-full h-full xl:hidden">
+              <div class="absolute right-0 bottom-1/2 transform translate-y-full z-10 md:mr-10 ipad:mb-10">
+                <div class="text-white font-sanReg mb-1 text-xxs mt-6 md:text-base">จํานวนบุคคลที่มีปัญหาสถานะและสิทธิ</div>
+                <div class="grid grid-flow-row grid-cols-2 md:grid-cols-1 md:gap-2 md:mt-4">
+                  <img class="object-contain h-5 md:h-8" src="../dist/assets/images/map2/group1.png" alt="" />
+                  <img class="object-contain h-5 md:h-8" src="../dist/assets/images/map2/group2.png" alt="" />
+                  <img class="object-contain h-5 md:h-8" src="../dist/assets/images/map2/group3.png" alt="" />
+                  <img class="object-contain h-5 md:h-8" src="../dist/assets/images/map2/group4.png" alt="" />
+                  <img class="object-contain h-5 md:h-8" src="../dist/assets/images/map2/group5.png" alt="" />
+                </div>
+              </div>
+            </div>
+            <div id="image-compare2" class="h-full w-full xl:h-10/12">
+              <img class="object-contain" src="../dist/assets/images//map2/map2-black.png" alt="" />
+              <img class="object-contain" src="../dist/assets/images/map2/map2.png" alt="" />
+            </div>
+            <div class="text-xxs md:text-base relative mt-5 font-sanReg mx-auto text-white xl:left-0 xl:hidden">
+              ที่มา: กองเศรษฐกิจสุขภาพและหลักประกันสุขภาพ สํานักงานปลัดกระทรวงสาธารณสุข ข้อมูล ณ วันที่ 31 พฤษภาคม 2563
+            </div>
+          </div>
+
+          <div class="hidden justify-end xl:block xl:w-2/12 xl:flex xl:flex-col pb-17per xl:pb-0 xl:h-10/12">
+            <div class="text-white font-sanReg mb-1 text-xxs mt-6 md:text-base xl:w-max">จํานวนบุคคลที่มีปัญหาสถานะและสิทธิ</div>
+            <div class="grid grid-flow-row grid-cols-2 md:grid-cols-1 md:gap-2 md:mt-4 xl:pl-8">
+              <img class="object-contain h-5 md:h-8" src="../dist/assets/images/map2/group1.png" alt="" />
+              <img class="object-contain h-5 md:h-8" src="../dist/assets/images/map2/group2.png" alt="" />
+              <img class="object-contain h-5 md:h-8" src="../dist/assets/images/map2/group3.png" alt="" />
+              <img class="object-contain h-5 md:h-8" src="../dist/assets/images/map2/group4.png" alt="" />
+              <img class="object-contain h-5 md:h-8" src="../dist/assets/images/map2/group5.png" alt="" />
+            </div>
+          </div>
+
+          <div class="hidden xl:block bottom-5 left-1/4 absolute transform -translate-y-1/2 w-full font-sanReg mx-auto text-white">
+            ที่มา: กองเศรษฐกิจสุขภาพและหลักประกันสุขภาพ สํานักงานปลัดกระทรวงสาธารณสุข ข้อมูล ณ วันที่ 31 พฤษภาคม 2563
           </div>
         </div>
       </div>
@@ -272,6 +346,59 @@
           </div>
         </div>
       </div>
+      <div class="section bg-dark-green">
+        <div class="flex flex-col w-full h-full px-5 pt-10 xl:flex-row xl:pt-0 ipad:flex-row ipad:pt-0">
+          <div class="h-max ipad:w-4/12 ipad:h-full ipad:flex ipad:items-center ipad:justify-center xl:w-4/12 xl:h-full xl:flex xl:items-center xl:justify-center 2xl:justify-end">
+            <div class="relative xl:mb-20 ipad:mb-20">
+              <div class="absolute w-3p bg-yellow h-full left-0"></div>
+              <div class="text-yellow pl-5 xl:pl-10 ipad:pl-10">
+                <div class="font-sanBold leading-relaxed md:text-3xl ipad:text-2xl xl:text-4xl">
+                  แผนภาพการกระจาย <br class="hidden xl:block ipad:block" />
+                  ของบุคคลที่มีปัญหา <br class="hidden md:block xl:block ipad:block" />
+                  สถานะและสิทธิ <br class="hidden xl:block ipad:block" />
+                  ตามจังหวัดต่างๆ ปี 2553
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mt-3 xs:mt-7 h-full w-full flex flex-col ipad:w-4/12 ipad:justify-center xl:w-4/12 xl:justify-center">
+            <div id="image-compare1" class="h-full w-full xl:h-9/12 ipad:h-9/12">
+              <img class="object-contain" src="../dist/assets/thaimap-black-white.png" alt="" />
+              <img class="object-contain" src="../dist/assets/thaimap-red.png" alt="" />
+            </div>
+            <div class="text-xxs relative text-white mx-auto mt-5 font-sanReg xl:text-base xl:mt-10 xl:right-10 ipad:text-xs ipad:mt-10">ที่มา: กรมการปกครอง กระทรวงมหาดไทย 18 มกราคม 2553</div>
+          </div>
+          <div
+            class="
+              w-full
+              h-max
+              xs:h-4/12
+              xl:h-full
+              ipad:h-full
+              mt-5
+              ipad:w-4/12 ipad:flex ipad:justify-center ipad:items-center
+              xl:w-4/12 xl:flex xl:justify-center xl:items-center
+              3xl:justify-start 3xl:pl-32
+            "
+          >
+            <div class="flex flex-col pb-5 xs:pb-24">
+              <div class="text-white font-sanReg mb-4 xl:mb-0">Province</div>
+              <div class="grid grid-flow-row grid-cols-2 gap-2 xl:grid-cols-1 xl:pt-3 ipad:grid-cols-1 ipad:pt-3">
+                <img class="object-contain h-7 xl:h-8" src="../dist/assets/images/group1.png" alt="" />
+                <img class="object-contain h-7 xl:h-8" src="../dist/assets/images/group2.png" alt="" />
+                <img class="object-contain h-7 xl:h-8" src="../dist/assets/images/group3.png" alt="" />
+                <img class="object-contain h-7 xl:h-8" src="../dist/assets/images/group4.png" alt="" />
+                <img class="object-contain h-7 xl:h-8" src="../dist/assets/images/group5.png" alt="" />
+                <img class="object-contain h-7 xl:h-8" src="../dist/assets/images/group6.png" alt="" />
+                <img class="object-contain h-7 xl:h-8" src="../dist/assets/images/group7.png" alt="" />
+                <img class="object-contain h-7 xl:h-8" src="../dist/assets/images/group8.png" alt="" />
+                <img class="object-contain h-7 xl:h-8" src="../dist/assets/images/group9.png" alt="" />
+                <img class="object-contain h-7 xl:h-8" src="../dist/assets/images/group10.png" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="section beforeQuote"></div>
       <div class="section section3 fpQuoteSlide fpQuoteSlide1 bg-gray-400"></div>
       <div class="section section4 fpQuoteSlide fpQuoteSlide2 bg-yellow"></div>
@@ -290,5 +417,6 @@
   <script src="library/gsap/minified/ScrollToPlugin.min.js"></script>
   <script src="library/gsap/minified/Flip.min.js"></script>
   <script src="library/gsap/minified/ScrambleTextPlugin.min.js"></script>
+  <script src="library/image-compare/image-compare-viewer.min.js"></script>
   <script src="js/main.js"></script>
 </html>

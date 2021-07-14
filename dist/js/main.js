@@ -1,7 +1,13 @@
+const element = document.getElementById("image-compare1");
+const viewer = new ImageCompare(element, { fluidMode: true, hoverStart: true }).mount();
+
+const element2 = document.getElementById("image-compare2");
+const viewer2 = new ImageCompare(element2, { fluidMode: true, hoverStart: true }).mount();
+
 gsap.registerPlugin(ScrambleTextPlugin, ScrollTrigger, Flip, ScrollToPlugin);
 
 ScrollTrigger.matchMedia({
-  "(min-width: 320px) and (max-width: 1024px)": function () {
+  "(min-width: 320px) and (max-width: 1023.9px)": function () {
     var s1TL = gsap.timeline();
     s1TL.set(".a2, .a3, .a4, .a5", {
       autoAlpha: 0,
@@ -88,6 +94,71 @@ ScrollTrigger.matchMedia({
     */
   },
   "(min-width: 1025px)": function () {
+    var s1TL = gsap.timeline();
+    s1TL.set(".a2, .a3, .a4, .a5", {
+      autoAlpha: 0,
+    });
+    s1TL.set(".a3, .a4, .a5", {
+      position: "absolute",
+      autoAlpha: 0,
+    });
+    s1TL.fromTo(
+      ".a1",
+      {
+        autoAlpha: 0,
+      },
+      {
+        scale: 1.3,
+        autoAlpha: 1,
+        duration: 2,
+      }
+    );
+    s1TL.to(".a1", {
+      scale: 1,
+    });
+    s1TL.to(".a2", {
+      autoAlpha: 1,
+    });
+    s1TL.to(".a1-2-wrap", {
+      x: "-60%",
+    });
+    s1TL.to(".a3", {
+      autoAlpha: 1,
+    });
+    s1TL.fromTo(
+      ".a4",
+      {
+        x: "50%",
+        y: "-14%",
+      },
+      {
+        x: "65%",
+        y: "-14%",
+        autoAlpha: 1,
+      }
+    );
+    s1TL.fromTo(
+      ".a5",
+      {
+        x: "1200%",
+        y: "-42%",
+      },
+      {
+        x: "1449%",
+        y: "-42%",
+
+        autoAlpha: 1,
+      },
+      "<"
+    );
+    s1TL.to(".a5", {
+      scale: 6,
+      x: "1638%",
+      y: "45%",
+    });
+  },
+  "only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape)": function () {
+    console.log("ipad");
     var s1TL = gsap.timeline();
     s1TL.set(".a2, .a3, .a4, .a5", {
       autoAlpha: 0,

@@ -30,6 +30,10 @@
                                   supported by Chrome, Edge, Opera and Firefox */
   }
 
+  .pb-17per {
+    padding-bottom: 17%;
+  }
+
   .w1 {
     width: 1px;
   }
@@ -104,81 +108,8 @@ body {
 }
 
 .section1 {
-  .container.s1 {
-    @media (min-width: 769px) {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin: 0 auto;
-
-      .group1 {
-        position: relative;
-        .item1 {
-        }
-        .item2 {
-          position: absolute;
-          right: 0;
-          visibility: hidden;
-        }
-      }
-      .group2 {
-        position: relative;
-        .item-wrap {
-          .item1 {
-          }
-          .item2 {
-            transition: all 0.2s ease-in-out;
-          }
-          .item3 {
-            transition: all 0.2s ease-in-out;
-          }
-        }
-        .item-wrap2 {
-          position: absolute;
-          right: 0;
-          display: "flex";
-          align-items: "center";
-          transform: translateX(100%);
-        }
-      }
-    }
-    @media (min-width: 320px) and (max-width: 768px) {
-      margin: 0 auto;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: row;
-
-      .group1 {
-        .item1 {
-          transition: all ease 0.5s;
-        }
-        .item2 {
-          transition: all 0.2s ease-in-out;
-          visibility: hidden;
-          position: absolute;
-        }
-      }
-      .group2 {
-        position: relative;
-        .item-wrap {
-          .item2 {
-            transition: all 0.2s ease-in-out;
-            visibility: hidden;
-          }
-          .item3 {
-            transition: all 0.2s ease-in-out;
-            visibility: hidden;
-          }
-        }
-        .item-wrap2 {
-          margin-left: 5px;
-          line-height: 1;
-          transform: translateY(3px);
-        }
-      }
-    }
-  }
+  background-image: url("../dist/assets/images/BG_01.png");
+  background-size: cover;
 }
 
 .doctor {
@@ -386,4 +317,13 @@ body {
     width: 170px;
     height: 170px;
   }
+}
+
+.icv__wrapper {
+  background-repeat: no-repeat !important;
+  background-size: contain !important;
+}
+.icv__fluidwrapper {
+  background-repeat: no-repeat !important;
+  background-size: contain !important;
 }
